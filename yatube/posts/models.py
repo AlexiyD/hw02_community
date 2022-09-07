@@ -11,7 +11,7 @@ class Group(models.Model):
                             unique=True,
                             db_index=True,
                             verbose_name="URL",
-                            null = True)
+                            null=True)
     description = models.TextField()
 
     def __str__(self) -> str:
@@ -21,8 +21,7 @@ class Group(models.Model):
 class Post(models.Model):
     text = models.TextField()
     pub_date = models.DateTimeField('дата публикации', auto_now_add = True)
-    author = models.ForeignKey(User, on_delete = models.CASCADE,
-                                related_name = 'posts') 
-    group = models.ForeignKey(Group, on_delete = models.CASCADE,
-                                blank = True, null = True)
-
+    author = models.ForeignKey(User, on_delete=models.CASCADE,
+                                related_name='posts') 
+    group = models.ForeignKey(Group, on_delete=models.CASCADE,
+                                blank=True, null=True)

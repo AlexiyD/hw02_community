@@ -3,7 +3,6 @@ from .models import Post, Group
 
 
 def index(request):
-    # Формируем шаблон
     template = 'posts/index.html'
     post_list = Post.objects.select_related('group').order_by('-pub_date')[:10]
     context = {
@@ -19,6 +18,5 @@ def group_posts(request, slug):
     context = {
         'group': group,
         'posts': posts
-        }
+    }
     return render(request, template, context)
-    
