@@ -1,7 +1,7 @@
 from django.db import models
 from django.contrib.auth import get_user_model
 
-Group =get_user_model()
+Group = get_user_model()
 User = get_user_model()
 
 
@@ -20,8 +20,8 @@ class Group(models.Model):
 
 class Post(models.Model):
     text = models.TextField()
-    pub_date = models.DateTimeField('дата публикации', auto_now_add = True)
+    pub_date = models.DateTimeField('дата публикации', auto_now_add=True)
     author = models.ForeignKey(User, on_delete=models.CASCADE,
-                                related_name='posts') 
+                            related_name='posts')
     group = models.ForeignKey(Group, on_delete=models.CASCADE,
-                                blank=True, null=True)
+                            blank=True, null=True)
