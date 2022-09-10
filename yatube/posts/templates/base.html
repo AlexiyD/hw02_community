@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html> <!-- Используется html 5 версии -->
 <html lang="ru"> <!-- Язык сайта - русский -->
   <head>
@@ -23,13 +22,13 @@
   </head>
   <body>
     {% include "includes/header.html"%}
-    <main> 
-      <div class="container py-5">
-        {% block content %}
-          Информация на главной странице будет тут. 
-        {% endblock %}
-      </div>   
-    </main>   
+     <main> 
+       <div class="container py-5">
+         {% block content %}
+           Информация на главной странице будет тут. 
+         {% endblock %}
+       </div>   
+     </main>   
     {% include "includes/footer.html"%}
   </body>
 </html>
