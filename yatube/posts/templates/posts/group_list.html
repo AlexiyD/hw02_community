@@ -4,8 +4,7 @@
 {% endblock %}
 {% block content %}
   {% for post in posts %}
-    {% include "includes/post_card.html"%}
-    <p>{{ post.text }}</p>    
-  {% if not forloop.last %}<hr>{% endif %}
-{% endfor %} 
+    {% include "includes/post_card.html"%}   
+    {% if not forloop.last %}<hr>{% endif %}
+  {% endfor %} 
 {% endblock %}
